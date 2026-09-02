@@ -1,0 +1,21 @@
+{
+  "name": "planta_do_rascunho",
+  "version": "1.0.0",
+  "description": "Aplicação web para criação de plantas baixas com base em rascunhos, utilizando IA para facilitar os processos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eltongil/planta_do_Rascunho.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/eltongil/planta_do_Rascunho/issues"
+  },
+  "homepage": "https://github.com/eltongil/planta_do_Rascunho#readme"
+}
