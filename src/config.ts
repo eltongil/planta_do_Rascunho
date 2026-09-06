@@ -25,10 +25,10 @@ export const config: ModelConfig = {
     httpReferer: process.env.HTTP_REFERER!,
     xTitle: "Planta do Rascunho",
     port: 3000,
-    models:[],
+    models:['llama-nemotron-rerank-vl-1b-v2:free'],
     temperature: 0.2,
     maxTokens: 50,
-    systemPrompt: "You are a helpful assistant.",
+    systemPrompt: "Route tester",
     provider: {
         sort:{
             by: "price",

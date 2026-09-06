@@ -3,7 +3,7 @@ import { createServer }from "./server.ts";
 import { OpenRouterService } from "./openRouterService.ts";
 
 const openRouterService = new OpenRouterService();
-const app = createServer();
+const app = createServer(openRouterService);
 
 await app.listen({ port: 3000,host:'0.0.0.0' });
 

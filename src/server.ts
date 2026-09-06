@@ -1,7 +1,8 @@
 import Fastify from "fastify";
+import { OpenRouterService } from "./openRouterService.ts";
 
-export const createServer = ( ) => {
-    const app = Fastify({logger: true});
+export const createServer = ( routerService: OpenRouterService) => {
+    const app = Fastify({logger: process.env.LOGGER_OPENROUTER === 'true'});
 
     app.post('/chat',{
         schema: {
@@ -17,8 +18,9 @@ export const createServer = ( ) => {
             try{
                 const { question } = request.body as { question: string };
                 // Process the question and generate a response
-                const response = `You asked: ${question}`;
-                return reply.send({ answer: response });
+                const response = await routerService.generate(question);
+                console.log("Response generated:", response);
+                return reply.send({ response });
             }
             catch (error) {
                 console.error(error);
