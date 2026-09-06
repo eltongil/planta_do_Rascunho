@@ -4,6 +4,7 @@
   "description": "Aplicação web para criação de plantas baixas com base em rascunhos, utilizando IA para facilitar os processos.",
   "main": "index.js",
   "scripts": {
+    "dev": "node --inspect --watch src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/eltongil/planta_do_Rascunho/issues"
   },
-  "homepage": "https://github.com/eltongil/planta_do_Rascunho#readme"
+  "homepage": "https://github.com/eltongil/planta_do_Rascunho#readme",
+  "dependencies": {
+    "@types/node": "^24.13.3",
+    "fastify": "^5.7.4"
+  }
 }
