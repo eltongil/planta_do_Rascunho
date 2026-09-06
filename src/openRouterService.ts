@@ -1,6 +1,6 @@
 import {OpenRouter} from "@openrouter/sdk";
 import {config, type ModelConfig } from "./config.ts";
-import { ProviderPreferences} from "@openrouter/sdk/models";
+import { type ProviderPreferences} from "@openrouter/sdk/models";
 
 export type LLMResponse = {
     model: string;

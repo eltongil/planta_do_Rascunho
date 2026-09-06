@@ -25,7 +25,7 @@ export const config: ModelConfig = {
     httpReferer: process.env.HTTP_REFERER!,
     xTitle: "Planta do Rascunho",
     port: 3000,
-    models:['llama-nemotron-rerank-vl-1b-v2:free'],
+    models:['inclusionai/ling-3.0-flash-sante:free'],
     temperature: 0.2,
     maxTokens: 50,
     systemPrompt: "Route tester",

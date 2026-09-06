@@ -11,10 +11,11 @@ app.inject({
     method: 'POST',
     url: '/chat',
     payload: {
-        question: 'What is the capital of France?'
+        question:  'What is the importance of B12?'
+        
     }
 }).then((response) => {
-    console.log(response.statusCode); // Should print 200
+    console.log(response.statusCode); // Should print 200    
     console.log(response.body); // Should print { answer: 'You asked: What is the capital of France?' }
 }).catch((error) => {
     console.error(error);
