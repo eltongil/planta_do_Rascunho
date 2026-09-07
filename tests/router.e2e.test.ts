@@ -1,6 +1,31 @@
-import assert from "node:assert";
+import test from "node:test";
+import assert from "node:assert/strict";
 import process from "node:process";
 import {createServer} from "../src/server.ts";
+import {config } from "../src/config.ts";
+import {type LLMResponse, OpenRouterService} from '../src/openRouterService.ts';
 
-console.assert(process.env.OPENROUTER_API_KEY, "OPENROUTER_API_KEY environment variable should be defined");
-console.assert(createServer, "createServer function should be defined");
+console.assert(process.env.OPENROUTER_API_KEY!.length > 10, "OPENROUTER_API_KEY environment variable is not set");   
+
+test('routes to cheapest model by default', async () => {
+    const customConfig = {
+        ...config,
+        provider:{
+            ...config.provider,
+            sort:{
+                ...config.provider.sort,
+                by: 'price'
+            }
+        }
+    }
+    const routerService = new OpenRouterService(customConfig);
+    const app = createServer(routerService);
+
+    const Question = "What is MCP?";
+    const response = await app.inject({
+        method: 'POST',
+        url: '/chat',
+        body: { question: Question }
+    });
+    assert.equal(response.statusCode, 200);
+})

@@ -20,7 +20,7 @@ export const createServer = ( routerService: OpenRouterService) => {
                 // Process the question and generate a response
                 const response = await routerService.generate(question);
                
-                console.log("Response generated:", response.choices[0].message.content);
+                console.log("Response generated:", response);
                 return reply.send({ response });
             }
             catch (error) {

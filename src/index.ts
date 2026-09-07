@@ -1,22 +1,21 @@
-import { config } from "./config.ts";
+import { config ,type ModelConfig} from "./config.ts";
 import { createServer }from "./server.ts";
 import { OpenRouterService } from "./openRouterService.ts";
 
 const openRouterService = new OpenRouterService();
+await openRouterService.updateModels();
 const app = createServer(openRouterService);
 
+const Questions = ["What is MCP?","What is RAG?","What is Entropy in termodinamichs?"];
+
+for (let question of Questions){
+    const response = await app.inject({
+        method: 'POST',
+        url: '/chat',
+        body: { question: question }
+    });
+    console.log(response)
+}
 await app.listen({ port: 3000,host:'0.0.0.0' });
 
-app.inject({
-    method: 'POST',
-    url: '/chat',
-    payload: {
-        question:  'What is the importance of B12?'
-        
-    }
-}).then((response) => {
-    console.log(response.statusCode); // Should print 200    
-    console.log(response.body); // Should print { answer: 'You asked: What is the capital of France?' }
-}).catch((error) => {
-    console.error(error);
-});
+
