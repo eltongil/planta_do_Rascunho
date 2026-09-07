@@ -1,0 +1,17 @@
+footer{
+    background-color: black;
+    color: bisque;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+
+header{
+    background-color: gainsboro;
+    color: firebrick;
+    text-align: center;
+}
+
+main{
+    display: inline;
+}
