@@ -4,6 +4,13 @@ footer{
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
+    font-weight: bolder;
+    font-size: larger;
+    bottom: 0%;
+}
+
+a{
+    color: bisque;
 }
 
 header{

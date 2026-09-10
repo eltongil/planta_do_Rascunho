@@ -1,6 +1,6 @@
-import { config ,type ModelConfig} from "./config.ts";
-import { createServer }from "./server.ts";
-import { OpenRouterService } from "./openRouterService.ts";
+import { config ,type ModelConfig} from "./openRouter/config.ts";
+import { createServer }from "./openRouter/server.ts";
+import { OpenRouterService } from "./openRouter/openRouterService.ts";
 
 const openRouterService = new OpenRouterService();
 await openRouterService.updateModels();

@@ -1,5 +1,5 @@
 console.assert(
-    process.env.OPENROUTER_API_KEY,
+    process.env.OPENROUTER_API_KEY!.length>20,
     "OPENROUTER_API_KEY environment variable is not set. Please set it in your .env file."  
 )
 
